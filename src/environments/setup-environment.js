@@ -4,6 +4,7 @@ import fs from "fs";
 
 const setupEnvironment = () => {
     const env = process.env.ENV;
+
     if (!env) {
         throw new Error("Environment variable ENV is not set");
     }

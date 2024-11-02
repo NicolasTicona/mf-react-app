@@ -1,11 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import { environment } from "./environments/environment.js";
+import { isBootstrap } from './constants/app.constants.js';
 
-console.log(environment.isLocal)
-
-if (environment.isLocal) {
+if (isBootstrap) {
     createRoot(document.getElementById("react-root")).render(
         <StrictMode>
             <App />

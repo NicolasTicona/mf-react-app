@@ -6,7 +6,8 @@
   "scripts": {
     "setup:env": "node src/environments/setup-environment.js",
     "dev": "ENV=local npm run setup:env && vite",
-    "build": "ENV=dev npm run setup:env && vite build",
+    "build:dev": "ENV=dev npm run setup:env && vite build",
+    "build:prod": "ENV=prod npm run setup:env && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
