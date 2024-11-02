@@ -6,8 +6,15 @@
 .contact-support-container .header {
     background-color: #118FC9;
     color: white;
-    padding: 4px 20px;
+    padding: 10px 20px;
     border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.contact-support-container .header img {
+    cursor: pointer;
 }
 
 .contact-support-container .header p {
@@ -55,8 +62,7 @@
     display: block;
     font-size: 16px;
     padding: 10px;
-    width: 40%;
-    max-width: 400px;
+    width: 220px;
     border-radius: 8px;
     border: 2px solid #118FC9;
     background-color: #fff;

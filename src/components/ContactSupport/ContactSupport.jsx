@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ContactSupport.css";
+import CloseIcon from '../../assets/close.svg'
 
 export function ContactSupport() {
     const [messages, setMessages] = useState([]);
@@ -23,6 +24,7 @@ export function ContactSupport() {
         <div className="contact-support-container">
             <div className="header">
                 <p>Contact Support</p>
+                <img src={CloseIcon} alt="Close" />
             </div>
 
             <div className="content" >
@@ -36,7 +38,7 @@ export function ContactSupport() {
             </div>
 
             <div className="form">
-                <input type="text" placeholder="Escribe tu consulta" onKeyUp={handleKeyUp}/>
+                <input type="text" placeholder="¿Cuál es tu pregunta?" onKeyUp={handleKeyUp}/>
             </div>
         </div>
     );
