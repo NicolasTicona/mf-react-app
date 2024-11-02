@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ContactSupport.css";
 
 export function ContactSupport() {
     const [messages, setMessages] = useState([]);
 
-    const handleKeyUp = (event) => {
+    useEffect(() => {
+        const contentChat = document.querySelector('.content');
+        
+        document.querySelector('.content').scroll({
+            behavior: 'smooth',
+            top: contentChat.scrollHeight
+        })
+    }, [messages])
 
+    const handleKeyUp = (event) => {
         if(event.key === "Enter") {
             setMessages([...messages, event.target.value]);
         }
@@ -17,7 +25,7 @@ export function ContactSupport() {
                 <p>Contact Support</p>
             </div>
 
-            <div className="content">
+            <div className="content" >
                 <p>Bienvenido a soporte!</p>
                 <p>¿En qué podemos ayudarte hoy?</p>
                 {

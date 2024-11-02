@@ -4,7 +4,7 @@ import { ContactSupport } from './components/ContactSupport/ContactSupport'
 function App() {
 
   return (
-    <div className='wrapper'>
+    <div className='support-wrapper'>
       <ContactSupport />
     </div>
   )
