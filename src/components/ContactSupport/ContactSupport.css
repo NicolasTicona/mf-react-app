@@ -117,3 +117,20 @@
     border-color: rgba(34, 211, 238, 0.5);
     box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.06);
 }
+
+.cs-card-message {
+    align-self: flex-start;
+    background-color: rgba(34, 211, 238, 0.06);
+    color: #7DD3FC;
+    padding: 8px 12px;
+    border-radius: 4px 10px 10px 10px;
+    max-width: 92%;
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.cs-card-message strong {
+    color: #22D3EE;
+    font-weight: 600;
+}
