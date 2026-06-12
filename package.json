@@ -9,7 +9,7 @@
     "build:dev": "ENV=dev npm run setup:env && vite build",
     "build:prod": "ENV=prod npm run setup:env && vite build",
     "lint": "eslint .",
-    "preview": "npm run build:dev && http-server ./dist -p 8080"
+    "preview": "npm run build:dev && http-server ./dist -p 8080 --cors"
   },
   "dependencies": {
     "react": "^18.3.1",

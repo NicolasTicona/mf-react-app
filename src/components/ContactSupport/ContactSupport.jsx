@@ -1,34 +1,39 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./ContactSupport.css";
 
 export function ContactSupport() {
     const [messages, setMessages] = useState([]);
+    const inputRef = useRef(null);
 
     const handleKeyUp = (event) => {
-
-        if(event.key === "Enter") {
-            setMessages([...messages, event.target.value]);
+        if (event.key === "Enter" && event.target.value.trim()) {
+            setMessages([...messages, event.target.value.trim()]);
+            event.target.value = "";
         }
-    }
+    };
 
     return (
         <div className="contact-support-container">
-            <div className="header">
-                <p>Contact Support</p>
+            <div className="cs-header">
+                <p className="cs-header__title">Contact Support</p>
+                <span className="cs-react-badge">React MFE</span>
             </div>
 
-            <div className="content">
-                <p>Bienvenido a soporte!</p>
-                <p>¿En qué podemos ayudarte hoy?</p>
-                {
-                    messages.map((message, index) => (
-                        <p className="sender" key={index}>{message}</p>
-                    ))
-                }
+            <div className="cs-content">
+                <p className="cs-bot-message">👋 Bienvenido a soporte!</p>
+                <p className="cs-bot-message">¿En qué podemos ayudarte hoy?</p>
+                {messages.map((message, index) => (
+                    <p className="cs-user-message" key={index}>{message}</p>
+                ))}
             </div>
 
-            <div className="form">
-                <input type="text" placeholder="Escribe tu consulta" onKeyUp={handleKeyUp}/>
+            <div className="cs-form">
+                <input
+                    ref={inputRef}
+                    type="text"
+                    placeholder="Escribe tu consulta y presiona Enter…"
+                    onKeyUp={handleKeyUp}
+                />
             </div>
         </div>
     );
